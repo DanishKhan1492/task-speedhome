@@ -47,6 +47,6 @@ The Design I followed is
 
 Controller **->** Service Layer **->** DAO Layer
 
-Controller -  Accepts the request and Forward the data to Service Layer for processing
-Service Layer - DTO **->** Entity and Entity **->** Dto  conversions and Business Processing done in this layer
-DAO Layer  - DB Interaction happens Here
+1. Controller -  Accepts the request and Forward the data to Service Layer for processing
+2. Service Layer - DTO **->** Entity and Entity **->** Dto  conversions and Business Processing done in this layer
+3. DAO Layer  - DB Interaction happens Here

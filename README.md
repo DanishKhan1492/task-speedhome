@@ -1,4 +1,4 @@
-# task-speedhome
+# Task-UpWork-SpeedHome
 
 # Authentication
     JWT Based Authentication. Upon authentication a JWT token is being created which is valid for an hour. JWT token is signed with private key and for verification we are using public key. i.e **RSA Algorithm** . Both Private and Public keys are generated dynamically upon server startup.
@@ -50,3 +50,13 @@ Controller **->** Service Layer **->** DAO Layer
 1. Controller -  Accepts the request and Forward the data to Service Layer for processing
 2. Service Layer - DTO **->** Entity and Entity **->** Dto  conversions and Business Processing done in this layer
 3. DAO Layer  - DB Interaction happens Here
+
+# Endpoints
+I have enabled swagger in the application. It can be accessed using URL http://localhost:8080/swagger-ui/#/
+
+# Database
+Database can be accessed using URL: http://localhost:8080/h2-console
+
+# Default Application And Database Credentials
+Username: Admin
+Passowrd: Admin

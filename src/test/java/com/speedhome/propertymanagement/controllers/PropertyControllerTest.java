@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -37,6 +38,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 class PropertyControllerTest {
     @MockBean
     PropertyService propertyService;
@@ -195,7 +197,7 @@ class PropertyControllerTest {
         address1.setFullAddress("Alaska USA");
         address1.setPostCode(12345);
 
-        property.setAddress(address1);
+        property1.setAddress(address1);
 
 
         PropertyDto property2 = new PropertyDto();
@@ -216,7 +218,7 @@ class PropertyControllerTest {
         address2.setFullAddress("Alaska USA");
         address2.setPostCode(12345);
 
-        property.setAddress(address2);
+        property2.setAddress(address2);
 
 
         propertyList.add(property);

@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine
+FROM adoptopenjdk:11.0.11_9-jre-openj9-0.26.0
 
 WORKDIR /app/speedhome/
 

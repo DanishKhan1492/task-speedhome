@@ -33,7 +33,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: danishkyndryl/learningapis/speedhome:1.0.0
+        tags: danishkyndryl/learningapis:speedhome-1.0.0
 
 
 

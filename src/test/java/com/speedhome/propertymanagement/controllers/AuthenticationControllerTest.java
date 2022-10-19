@@ -27,10 +27,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @Slf4j
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
-@RequiredArgsConstructor
 class AuthenticationControllerTest {
-
-    private final MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {

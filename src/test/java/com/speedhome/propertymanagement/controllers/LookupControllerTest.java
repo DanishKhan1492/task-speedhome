@@ -37,7 +37,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
-@RequiredArgsConstructor
 class LookupControllerTest {
     @MockBean
     FloorLevelService floorLevelService;
@@ -45,7 +44,8 @@ class LookupControllerTest {
     @MockBean
     FurnishingService furnishingService;
 
-    private final MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
     private String jwtToken;
 

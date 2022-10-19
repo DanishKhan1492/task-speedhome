@@ -45,7 +45,8 @@ class PropertyControllerTest {
     @MockBean
     PropertyService propertyService;
 
-    private final MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
     private final ObjectMapper objectMapper;
 

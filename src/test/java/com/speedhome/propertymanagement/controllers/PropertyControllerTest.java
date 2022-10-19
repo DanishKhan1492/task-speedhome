@@ -7,6 +7,7 @@ import com.speedhome.propertymanagement.dtos.PropertyDto;
 import com.speedhome.propertymanagement.dtos.PropertyStatusDto;
 import com.speedhome.propertymanagement.dtos.SearchCriteria;
 import com.speedhome.propertymanagement.services.PropertyService;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -39,15 +40,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
+@RequiredArgsConstructor
 class PropertyControllerTest {
     @MockBean
     PropertyService propertyService;
 
-    @Autowired
-    private MockMvc mockMvc;
+    private final MockMvc mockMvc;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
     private List<PropertyDto> properties;
 

@@ -6,6 +6,7 @@ import com.speedhome.propertymanagement.dtos.FloorLevelDto;
 import com.speedhome.propertymanagement.dtos.FurnishingTypesDto;
 import com.speedhome.propertymanagement.services.FloorLevelService;
 import com.speedhome.propertymanagement.services.FurnishingService;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -36,6 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
+@RequiredArgsConstructor
 class LookupControllerTest {
     @MockBean
     FloorLevelService floorLevelService;
@@ -43,8 +45,7 @@ class LookupControllerTest {
     @MockBean
     FurnishingService furnishingService;
 
-    @Autowired
-    private MockMvc mockMvc;
+    private final MockMvc mockMvc;
 
     private String jwtToken;
 

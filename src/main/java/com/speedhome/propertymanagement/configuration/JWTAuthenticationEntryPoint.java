@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:07 PM
+ * created 21/5/21 - 12:07 PM
  */
 @Component
 public class JWTAuthenticationEntryPoint implements AuthenticationEntryPoint {

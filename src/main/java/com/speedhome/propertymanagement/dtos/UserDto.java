@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:21 PM
+ * created 21/5/21 - 12:21 PM
  */
 @Data
 public class UserDto {

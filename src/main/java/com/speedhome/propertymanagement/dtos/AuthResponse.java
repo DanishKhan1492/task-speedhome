@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:23 PM
+ * created 21/5/21 - 12:23 PM
  */
 @Data
 public class AuthResponse {

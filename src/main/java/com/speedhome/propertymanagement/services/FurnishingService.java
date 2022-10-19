@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:49 PM
+ * created 21/5/21 - 12:49 PM
  */
 public interface FurnishingService {
     List<FurnishingTypesDto> getAllFurnishingTypes();

@@ -1,6 +1,9 @@
 package com.speedhome.propertymanagement.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.CascadeType;
@@ -17,14 +20,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 6:53 PM
+ * created 20/5/21 - 6:53 PM
  */
 @Entity
 @Table(name = "PROPERTY")
-@Data
+@Setter
+@Getter
+@NoArgsConstructor
 public class PropertyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,4 +74,21 @@ public class PropertyEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CREATED_BY")
     private UserEntity createdBy;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PropertyEntity that = (PropertyEntity) o;
+        return propertyId.equals(that.propertyId) && propertyName.equals(that.propertyName) && buildupSize.equals(that.buildupSize) && creationDate.equals(that.creationDate) && status.equals(that.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(propertyId, propertyName, buildupSize, creationDate, status);
+    }
 }

@@ -10,6 +10,7 @@ import com.speedhome.propertymanagement.entities.PropertyEntity;
 import com.speedhome.propertymanagement.entities.UserEntity;
 import com.speedhome.propertymanagement.services.PropertyService;
 import com.speedhome.propertymanagement.utils.exceptions.NoPropertyFoundException;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.data.domain.Page;
@@ -25,19 +26,15 @@ import java.util.stream.Collectors;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 1:51 PM
+ * created 21/5/21 - 1:51 PM
  */
 @Service
+@RequiredArgsConstructor
 public class PropertyServiceImpl implements PropertyService {
 
-    private PropertyDao propertyDao;
+    private final PropertyDao propertyDao;
 
-    private ModelMapper modelMapper;
-
-    public PropertyServiceImpl(PropertyDao propertyDao, ModelMapper modelMapper) {
-        this.propertyDao = propertyDao;
-        this.modelMapper = modelMapper;
-    }
+    private final ModelMapper modelMapper;
 
     @Override
     @Transactional

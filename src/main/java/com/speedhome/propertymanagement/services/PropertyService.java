@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 5:33 PM
+ * created 20/5/21 - 5:33 PM
  */
 public interface PropertyService {
     PropertyDto createAndUpdateProperty(PropertyDto property);

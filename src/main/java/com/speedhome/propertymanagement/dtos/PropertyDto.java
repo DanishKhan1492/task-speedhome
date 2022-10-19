@@ -14,7 +14,7 @@ import java.util.Date;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 2:06 PM
+ * created 21/5/21 - 2:06 PM
  */
 @Data
 @ToString

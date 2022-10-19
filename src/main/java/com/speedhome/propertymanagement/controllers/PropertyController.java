@@ -6,6 +6,7 @@ import com.speedhome.propertymanagement.dtos.ResponseDto;
 import com.speedhome.propertymanagement.dtos.SearchCriteria;
 import com.speedhome.propertymanagement.services.PropertyService;
 import com.speedhome.propertymanagement.utils.exceptions.NoPropertyFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,15 +22,15 @@ import java.util.List;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 4:10 PM
+ * created 21/5/21 - 4:10 PM
  */
 
 @RestController
 @RequestMapping("/properties")
+@RequiredArgsConstructor
 public class PropertyController {
 
-    @Autowired
-    private PropertyService propertyService;
+    private final PropertyService propertyService;
 
 
     @PostMapping("/create")

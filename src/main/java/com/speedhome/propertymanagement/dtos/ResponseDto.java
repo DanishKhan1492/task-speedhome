@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 7:34 PM
+ * created 21/5/21 - 7:34 PM
  */
 @Data
 @NoArgsConstructor

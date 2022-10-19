@@ -7,6 +7,7 @@ import com.speedhome.propertymanagement.dtos.FurnishingTypesDto;
 import com.speedhome.propertymanagement.dtos.PropertyDto;
 import com.speedhome.propertymanagement.services.FloorLevelService;
 import com.speedhome.propertymanagement.services.FurnishingService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,20 +18,16 @@ import java.util.List;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 4:07 PM
+ * created 21/5/21 - 4:07 PM
  */
 @RestController
 @RequestMapping("/lookup")
+@RequiredArgsConstructor
 public class LookupController {
 
-    private FloorLevelService floorLevelService;
+    private final FloorLevelService floorLevelService;
 
-    private FurnishingService furnishingService;
-
-    public LookupController(FloorLevelService floorLevelService, FurnishingService furnishingService) {
-        this.floorLevelService = floorLevelService;
-        this.furnishingService = furnishingService;
-    }
+    private final FurnishingService furnishingService;
 
     @GetMapping("/floors")
     public ResponseEntity<List<FloorLevelDto>> getAllFloorLevels() throws JsonProcessingException {

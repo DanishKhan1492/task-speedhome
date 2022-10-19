@@ -1,7 +1,9 @@
 package com.speedhome.propertymanagement.entities;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,11 +16,12 @@ import java.util.Objects;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 6:53 PM
+ * created 20/5/21 - 6:53 PM
  */
 @Entity
 @Table(name = "FLOOR_LEVEL")
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 public class FloorLevelEntity {
     @Id
@@ -31,5 +34,22 @@ public class FloorLevelEntity {
 
     public FloorLevelEntity(Integer floorLevelId) {
         this.floorLevelId = floorLevelId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        FloorLevelEntity that = (FloorLevelEntity) o;
+        return floorLevelId.equals(that.floorLevelId) && floorLevelName.equals(that.floorLevelName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(floorLevelId, floorLevelName);
     }
 }

@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 3:38 PM
+ * created 21/5/21 - 3:38 PM
  */
 
 @Data

@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 3:43 PM
+ * created 21/5/21 - 3:43 PM
  */
 public class GenericSpecification implements Specification<PropertyEntity> {
     private SearchCriteria searchCriteria;

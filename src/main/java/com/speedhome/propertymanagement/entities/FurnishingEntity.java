@@ -1,7 +1,9 @@
 package com.speedhome.propertymanagement.entities;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,11 +15,12 @@ import java.util.Objects;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 6:53 PM
+ * created 20/5/21 - 6:53 PM
  */
 @Entity
 @Table(name = "FURNISHING")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class FurnishingEntity {
     @Id
@@ -30,5 +33,22 @@ public class FurnishingEntity {
 
     public FurnishingEntity(Integer furnishingId) {
         this.furnishingId = furnishingId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        FurnishingEntity that = (FurnishingEntity) o;
+        return furnishingId.equals(that.furnishingId) && furnishingType.equals(that.furnishingType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(furnishingId, furnishingType);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Collection;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 3:15 PM
+ * created 21/5/21 - 3:15 PM
  */
 public class CustomUserDetails  extends User {
 

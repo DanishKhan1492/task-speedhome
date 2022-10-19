@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.speedhome.propertymanagement.dtos.ErrorResponseDto;
 import com.speedhome.propertymanagement.services.impl.CustomUserDetailService;
 import com.speedhome.propertymanagement.utils.JWTTokenUtil;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,18 +24,16 @@ import java.util.Arrays;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:09 PM
+ * created 21/5/21 - 12:09 PM
  */
 @Component
+@RequiredArgsConstructor
 public class JWTRequestFilter extends OncePerRequestFilter {
-    @Autowired
-    private CustomUserDetailService customUserDetailService;
+    private final CustomUserDetailService customUserDetailService;
 
-    @Autowired
-    private JWTTokenUtil jwtTokenUtil;
+    private final JWTTokenUtil jwtTokenUtil;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
     private static final String[] ALLOWED_URIS = {
             "/v2",
             "/swagger-resources",
@@ -63,7 +61,8 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 
         String username = "";
         String jwtToken = "";
-        if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
+        String jwtTokenStartKeyword = "Bearer ";
+        if (tokenHeader != null && tokenHeader.startsWith(jwtTokenStartKeyword)) {
             jwtToken = tokenHeader.substring(7);
             try {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);

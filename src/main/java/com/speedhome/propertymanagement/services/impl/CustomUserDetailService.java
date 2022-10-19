@@ -4,6 +4,7 @@ import com.speedhome.propertymanagement.daos.UserDao;
 import com.speedhome.propertymanagement.dtos.CustomUserDetails;
 import com.speedhome.propertymanagement.entities.UserEntity;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,14 @@ import java.util.ArrayList;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 5:34 PM
+ * created 20/5/21 - 5:34 PM
  */
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class CustomUserDetailService implements UserDetailsService {
 
-    @Autowired
-    private UserDao userDao;
+    private final UserDao userDao;
 
     @Override
     public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

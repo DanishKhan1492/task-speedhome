@@ -21,7 +21,7 @@ import java.util.function.Function;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 5:26 PM
+ * created 20/5/21 - 5:26 PM
  */
 
 @Component
@@ -68,7 +68,7 @@ public class JWTTokenUtil implements Serializable {
                 .signWith(SignatureAlgorithm.RS256, (PrivateKey) KEYS.get("private")).compact();
     }
 
-    public Boolean validateToken(String token, UserDetails userDetails) {
+    public boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }

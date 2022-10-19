@@ -1,6 +1,8 @@
 package com.speedhome.propertymanagement.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,11 +15,12 @@ import java.util.Objects;
 
 /**
  * @author Muhammad Danish Khan
- * @created 20/5/21 - 6:53 PM
+ * created 20/5/21 - 6:53 PM
  */
 @Entity
 @Table(name = "ADDRESS")
-@Data
+@Getter
+@Setter
 public class AddressEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +32,21 @@ public class AddressEntity {
 
     @Column(name = "POST_CODE")
     private Integer postCode;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AddressEntity that = (AddressEntity) o;
+        return addressId.equals(that.addressId) && fullAddress.equals(that.fullAddress);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(addressId, fullAddress);
+    }
 }

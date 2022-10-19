@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author Muhammad Danish Khan
- * @created 21/5/21 - 12:29 PM
+ * created 21/5/21 - 12:29 PM
  */
 @ControllerAdvice
 public class ExceptionControllerAdvise {
